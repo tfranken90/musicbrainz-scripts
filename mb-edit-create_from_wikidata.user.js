@@ -26,6 +26,10 @@
 // @include      http*://*musicbrainz.org/work/create*
 // @include      http*://*musicbrainz.org/work/*/edit
 // @exclude      http*://*musicbrainz.org/work/*/alias/*/edit
+// @include      http*://*musicbrainz.org/series/create*
+// @include      http*://*musicbrainz.org/series/*/edit
+// @exclude      http*://*musicbrainz.org/series/*/alias/*/edit
+// @exclude      http*://*musicbrainz.org/series/*/credit/*/edit
 // @grant        GM_xmlhttpRequest
 // @connect      wikipedia.org
 // @connect      isni.org
@@ -114,6 +118,7 @@ class WikiDataHelpers {
             idVimeo: 'P4015',
             idPatreon: 'P4175',
             idAnghami: 'P10885',
+            idFeed: 'P1019',
             // missing: Tumblr (P3943), Bandcamp (P3283)
         };
         this.urls = {
@@ -164,6 +169,7 @@ class WikiDataHelpers {
             idVimeo: 'https://vimeo.com/',
             idPatreon: 'https://www.patreon.com/',
             idAnghami: 'https://play.anghami.com/artist/',
+            idFeed: '',
         };
     }
 
@@ -321,6 +327,7 @@ for (const [key, value] of Object.entries(FIELD_NAMES)) {
         FIELD_NAMES[key.replace('artist', 'place')] = value;
         FIELD_NAMES[key.replace('artist', 'work')] = value;
         FIELD_NAMES[key.replace('artist', 'label')] = value;
+        FIELD_NAMES[key.replace('artist', 'series')] = value;
     }
 }
 
