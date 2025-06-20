@@ -119,6 +119,7 @@ class WikiDataHelpers {
             idPatreon: 'P4175',
             idAnghami: 'P10885',
             idFeed: 'P1019',
+            idImage: 'P18',
             // missing: Tumblr (P3943), Bandcamp (P3283)
         };
         this.urls = {
@@ -170,6 +171,7 @@ class WikiDataHelpers {
             idPatreon: 'https://www.patreon.com/',
             idAnghami: 'https://play.anghami.com/artist/',
             idFeed: '',
+            idImage: 'https://commons.wikimedia.org/wiki/File:',
         };
     }
 
