@@ -118,8 +118,18 @@ class WikiDataHelpers {
             idVimeo: 'P4015',
             idPatreon: 'P4175',
             idAnghami: 'P10885',
-            idFeed: 'P1019',
             idImage: 'P18',
+            //series
+            idFeed: 'P1019',
+            idApple: 'P5842',
+            idHeart: 'P7324',
+            idListen: 'P10213',
+            idNPR: 'P5840',
+            idPlayer: 'P9010',
+            //idPocket: 'P9006',
+            idPIndex: 'P11740',
+            idPodchaser: 'P7998',
+            idSpotifyShow: 'P5916',
             // missing: Tumblr (P3943), Bandcamp (P3283)
         };
         this.urls = {
@@ -170,8 +180,19 @@ class WikiDataHelpers {
             idVimeo: 'https://vimeo.com/',
             idPatreon: 'https://www.patreon.com/',
             idAnghami: 'https://play.anghami.com/artist/',
-            idFeed: '',
-            idImage: 'https://commons.wikimedia.org/wiki/File:',
+            idImage: 'P18',
+            //series
+            idFeed: 'P1019',
+            idApple: 'P5842',
+            idHeart: 'P7324',
+            idListen: 'P10213',
+            idNPR: 'P5840',
+            idPlayer: 'P9010',
+            //idPocket: 'P9006',
+            idPIndex: 'P11740',
+            idPodchaser: 'P7998',
+            idSpotifyShow: 'P5916',
+            // missing: Tumblr (P3943), Bandcamp (P3283)
         };
     }
 
