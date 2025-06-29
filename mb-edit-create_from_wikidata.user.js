@@ -68,6 +68,7 @@ class WikiDataHelpers {
             mbidArtist: 'P434',
             mbidArea: 'P982',
             mbidPlace: 'P1004',
+            mbidSeries: 'P1407',
             members: 'P527',
             student: 'P802',
             teacher: 'P1066',
