@@ -17,6 +17,10 @@
 // @include      http*://*musicbrainz.org/artist/*/edit
 // @exclude      http*://*musicbrainz.org/artist/*/alias/*/edit
 // @exclude      http*://*musicbrainz.org/artist/*/credit/*/edit
+// @include      http*://*musicbrainz.org/series/create*
+// @include      http*://*musicbrainz.org/series/*/edit
+// @exclude      http*://*musicbrainz.org/series/*/alias/*/edit
+// @exclude      http*://*musicbrainz.org/series/*/credit/*/edit
 // @include      http*://*musicbrainz.org/label/create*
 // @include      http*://*musicbrainz.org/label/*/edit
 // @exclude      http*://*musicbrainz.org/label/*/alias/*/edit
