@@ -130,6 +130,7 @@ class WikiDataHelpers {
             idPIndex: 'P11740',
             idPodchaser: 'P7998',
             idSpotifyShow: 'P5916',
+            presenter: 'P371',
             // missing: Tumblr (P3943), Bandcamp (P3283)
         };
         this.urls = {
@@ -180,19 +181,18 @@ class WikiDataHelpers {
             idVimeo: 'https://vimeo.com/',
             idPatreon: 'https://www.patreon.com/',
             idAnghami: 'https://play.anghami.com/artist/',
-            idImage: 'P18',
-            //series
-            idFeed: 'P1019',
-            idApple: 'P5842',
-            idHeart: 'P7324',
-            idListen: 'P10213',
-            idNPR: 'P5840',
-            idPlayer: 'P9010',
-            //idPocket: 'P9006',
-            idPIndex: 'P11740',
-            idPodchaser: 'P7998',
-            idSpotifyShow: 'P5916',
-            // missing: Tumblr (P3943), Bandcamp (P3283)
+            idImage: 'https://commons.wikimedia.org/wiki/File:',
+            // series
+            idFeed: '',
+            idApple: 'https://podcasts.apple.com/us/podcast/',
+            idHeart: 'https://www.iheart.com/podcast/',
+            idListen: 'https://www.listennotes.com/podcasts/_-',
+            idNPR: 'https://www.npr.org/podcasts/',
+            idPlayer: 'https://player.fm/series/',
+            //idPocket: 'https://pca.st/',
+            idPIndex: 'https://podcastindex.org/podcast/',
+            idPodchaser: 'https://www.podchaser.com/podcasts/',
+            idSpotifyShow: 'https://open.spotify.com/show/'
         };
     }
 
@@ -620,6 +620,19 @@ function _fillFormFromWikidata(entity, entityType) {
             (!domain && !existingDomains.includes(fullUrl.split('/')[2]))
         ) {
             _fillExternalLinks(fullUrl);
+        }
+    }
+
+    for (const role of ['presenter']) {
+        if (libWD.existField(entity, role)) {
+            libWD.request(libWD.fieldValue(entity, role).id, data => {
+                const name = data.labels[lang].value;
+                $('#newFields').append(
+                    $('<dt>', {'text': `${role} suggestion:`})
+                ).append(
+                    $('<dd>', {'text': name}).css('color', 'orange')
+                );
+            });
         }
     }
 
