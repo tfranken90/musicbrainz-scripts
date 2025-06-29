@@ -653,15 +653,13 @@ function _fillFormFromWikidata(entity, entityType) {
 
 function fillFormFromWikidata(wikiId) {
     const entityType = document.URL.split('/')[3];
+    const entityMBID = 'mbid' + entityType.charAt(0).toUpperCase() + entityType.slice(1)
     libWD.request(wikiId, entity => {
         if (
             document.URL.split('/')[4] == 'create' &&
-            (libWD.existField(entity, 'mbidArtist') ||
-                libWD.existField(entity, 'mbidPlace'))
+            (libWD.existField(entity, entityMBID))
         ) {
-            const mbid = libWD.existField(entity, 'mbidArtist')
-                ? libWD.fieldValue(entity, 'mbidArtist')
-                : libWD.fieldValue(entity, 'mbidPlace');
+            const mbid = libWD.fieldValue(entity, entityMBID);
             // eslint-disable-next-line no-alert
             if (window.confirm(
                     'An entity already exists linked to this wikidata id, ' +
